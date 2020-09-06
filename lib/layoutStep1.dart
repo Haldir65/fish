@@ -60,6 +60,7 @@ class MyApp extends StatelessWidget {
             _buildEvenDistributeImageRows(),
             _build_cardWithShadow(),
             _buildImageSection(),
+            _buildCustomButtom(),
             titleSection,
             buttonSection,
             textSection
@@ -68,6 +69,31 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+class CustomButton extends StatelessWidget {
+  final String label;
+  CustomButton(this.label);
+
+  @override
+  Widget build(BuildContext context) {
+    return new RaisedButton(onPressed: () {}, child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+           Text(label,style: TextStyle(
+            color: Colors.greenAccent
+        )),
+        Text(label,style: TextStyle(
+          color: Colors.yellow,
+        ),)
+      ],
+    )
+    );
+  }
+}
+
+Widget _buildCustomButtom(){
+  return CustomButton('按钮');
 }
 
 Widget _buildImageSection() {
