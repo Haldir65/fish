@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/layout/ListViewExample.dart';
 import 'package:flutter_app/navigation/PageB.dart';
 import 'package:flutter_app/navigation/constants.dart';
 import 'package:flutter_app/navigation/Arguments.dart';
@@ -20,7 +21,8 @@ void main() {
       aboutRoute: (context) => MyPage(
             title: aboutRoute,
           ),
-      dioExample:(context) => DioExamplePage()
+      dioExample:(context) => DioExamplePage(),
+      layoutListView: (context) => ListViewPage()
     },
     // routes: <String, WidgetBuilder>{
     //   '/a': (BuildContext context) => MyPage(title: 'PageA a'),
@@ -78,8 +80,9 @@ class MyAppHomePage extends StatelessWidget {
   Widget _buildBodyElements(BuildContext context) {
     List<PageData> pages = List.of([
       PageData(url: feedRoute, desc: "点击跳转$feedRoute",payLoad:ScreenArguments(title:'feed',message:'message')),
-      PageData(url: aboutRoute, desc: "点击跳转$aboutRoute",payLoad:ScreenArguments(title:'feed',message:'message')),
+      PageData(url: aboutRoute, desc: "点击跳转$aboutRoute",payLoad:ScreenArguments(title:'message',message:'message')),
       PageData(url: dioExample, desc: "点击跳转$dioExample",payLoad:ScreenArguments(title:'dioExample',message:'dioExample')),
+      PageData(url: layoutListView, desc: "点击跳转$layoutListView",payLoad:ScreenArguments(title:'layoutListView',message:'layoutListView')),
     ]);
     var card = Card(
       child: Column(

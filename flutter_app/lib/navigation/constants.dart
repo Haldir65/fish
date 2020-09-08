@@ -5,3 +5,5 @@ const String feedRoute = '/feed';
 const String aboutRoute = '/about';
 
 const String dioExample = '/dio';
+
+const String layoutListView = '/layoutlistview';
