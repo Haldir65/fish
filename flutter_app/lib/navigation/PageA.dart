@@ -2,11 +2,13 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/layout/ListViewExample.dart';
+import 'package:flutter_app/layout/BackGroundImageSample.dart';
 import 'package:flutter_app/navigation/PageB.dart';
 import 'package:flutter_app/navigation/constants.dart';
 import 'package:flutter_app/navigation/Arguments.dart';
 import 'package:flutter_app/http/dioExample.dart';
 import 'package:flutter_app/utils/CommonUtils.dart';
+import 'package:flutter_app/webview/Browser.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -22,7 +24,9 @@ void main() {
             title: aboutRoute,
           ),
       dioExample:(context) => DioExamplePage(),
-      layoutListView: (context) => ListViewPage()
+      layoutListView: (context) => ListViewPage(),
+      backgroundImage:(context) => BackGroundImage(),
+      browser:(context) => Browser(url:'https://www.baidu.com',title: 'baidu',),
     },
     // routes: <String, WidgetBuilder>{
     //   '/a': (BuildContext context) => MyPage(title: 'PageA a'),
@@ -83,6 +87,8 @@ class MyAppHomePage extends StatelessWidget {
       PageData(url: aboutRoute, desc: "点击跳转$aboutRoute",payLoad:ScreenArguments(title:'message',message:'message')),
       PageData(url: dioExample, desc: "点击跳转$dioExample",payLoad:ScreenArguments(title:'dioExample',message:'dioExample')),
       PageData(url: layoutListView, desc: "点击跳转$layoutListView",payLoad:ScreenArguments(title:'layoutListView',message:'layoutListView')),
+      PageData(url: backgroundImage, desc: "点击跳转$backgroundImage",payLoad:ScreenArguments(title:'backgroundImage',message:'backgroundImage')),
+      PageData(url: browser, desc: "点击跳转$browser",payLoad:ScreenArguments(title:'browser',message:'browser')),
     ]);
     var card = Card(
       child: Column(
