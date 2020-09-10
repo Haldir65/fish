@@ -11,3 +11,5 @@ const String layoutListView = '/layoutlistview';
 const String backgroundImage = '/backgroundImage';
 
 const String browser = '/browser';
+
+const String photoList = '/photoList';

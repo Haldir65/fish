@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/layout/ListViewExample.dart';
 import 'package:flutter_app/layout/BackGroundImageSample.dart';
+import 'package:flutter_app/layout/PhotoListFromJson.dart';
 import 'package:flutter_app/navigation/PageB.dart';
 import 'package:flutter_app/navigation/constants.dart';
 import 'package:flutter_app/navigation/Arguments.dart';
@@ -27,6 +28,7 @@ void main() {
       layoutListView: (context) => ListViewPage(),
       backgroundImage:(context) => BackGroundImage(),
       browser:(context) => Browser(url:'https://www.baidu.com',title: 'baidu',),
+      photoList:(context) => MyPhotosHomePage(title: 'PhotoList',),
     },
     // routes: <String, WidgetBuilder>{
     //   '/a': (BuildContext context) => MyPage(title: 'PageA a'),
@@ -89,6 +91,7 @@ class MyAppHomePage extends StatelessWidget {
       PageData(url: layoutListView, desc: "点击跳转$layoutListView",payLoad:ScreenArguments(title:'layoutListView',message:'layoutListView')),
       PageData(url: backgroundImage, desc: "点击跳转$backgroundImage",payLoad:ScreenArguments(title:'backgroundImage',message:'backgroundImage')),
       PageData(url: browser, desc: "点击跳转$browser",payLoad:ScreenArguments(title:'browser',message:'browser')),
+      PageData(url: photoList, desc: "点击跳转$photoList",payLoad:ScreenArguments(title:'photoList',message:'photoList')),
     ]);
     var card = Card(
       child: Column(
